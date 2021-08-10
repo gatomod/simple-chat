@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Chat simple en socket.io xd</title>
+    </head>
+    <body>
+        <script src="/socket.io/socket.io.js" charset="utf-8" defer></script>
+        <script src="chat.js" charset="utf-8" defer></script>
+        
+        <!--<div class="
+        flex flex-col justify-center items-center
+        min-h-screen bg-green-300
+        ">
+            <!-- Chat 
+            <div class="
+            flex flex-col justify-center items-center
+            min-w-max
+            ">
+            <div class="
+                    bg-gradient-to-r from-blue-500 to-indigo-700
+                    px-8 py-6
+                    rounded-t-md
+                    flex flex-row items-center
+                    space-x-32
+                    max-w-2xl
+                    sticky
+                    ">
+                        <h1 class="
+                        text-4xl
+                        text-white
+                        font-semibold
+                        text-left
+                        ">Chat cutre</h1>
+                        <h3 class="
+                        text-xl
+                        text-gray-300
+                        italic
+                        text-right
+                        ">Posiblemente no funcione xd</h3>
+                    </div>
+
+
+
+                <!--window
+
+                <div class="
+                    bg-white
+                    rounded-t-md
+                    flex flex-col justify-center
+                    max-w-2xl
+                    space-x-32
+                    ">
+
+                        <!--Mensajes
+                        <div id="output" class="
+                        flex flex-col items-center justify-center
+                        bg-gray-200
+                        rounded-b-md
+                        ">
+                        gente xd
+                        </div>
+                        <!--eventos
+                        <div id="actions" class="
+                        flex flex-col items-center justify-center
+                        bg-red-200
+                        rounded-b-md
+                        max-w-xl
+                        ">
+                            hola
+                        </div>
+                        <!--input
+                        <div class="
+                        flex flex-row items-center justify-center
+                        bg-red-200
+                        rounded-b-md
+                        max-w-xl
+                        ">
+                            hola
+                        </div>
+                    </div>
+        </div>-->
+
+
+
+
+
+    <div class="
+    min-h-screen bg-gray-800
+    flex justify-center items-center
+    shadow-md
+    ">
+        <div>
+            <div class="
+            sticky top-0
+            flex flex-col items-center
+            bg-gray-300
+            rounded-t-2xl
+            ">
+                <div class="
+            bg-gradient-to-r from-blue-500 to-indigo-700
+            px-8 py-6
+            rounded-t-md
+            flex flex-row items-center
+            max-w-2xl
+            space-x-16
+            select-none
+            
+            ">
+                <h1 class="text-4xl text-white font-semibold text-left">Chat con socket.io</h1>
+                <h2 class="text-xl italic text-white text-right">Posiblemente no funcione</h2>
+
+               
+            </div>
+            <div class="
+                h-5 w-screen max-w-2xl space-x-16
+                inset-x-0 z-10 bg-gradient-to-b from-blue-300 to-transparent"> </div>
+            </div>
+
+            <div class="
+            bg-gray-300
+            rounded-b-md
+            py-6
+            flex flex-col items-center
+            max-w-2xl
+            space-y-5
+            ">
+                <!--Mensajes-->
+                <div id="output" class="
+                flex flex-col 
+                
+                px-32
+                text-left
+                object-feft
+                "></div>
+
+                <!--Eventos-->
+                <div id="actions" class="
+                flex flex-col items-center justify-center 
+                "></div>
+                <!--input-->
+                
+                <div class="
+                sticky bottom-0 w-screen max-w-2xl
+                bg-gray-300
+                flex flex-col justify-center
+                
+                ">
+
+                <div class="
+                flex flex-row items-center justify-center
+                space-x-2
+                ">
+                
+                <input type="text" id="username" placeholder="Nombre de usuario" required="true" 
+                class="
+                border-2 rounded-md border-blue-500
+                focus:shadow-md
+                p-2
+                transform
+                transition duration-500 ease-in-out
+                ">
+                <input type="text" id="message" required="true" placeholder="Escribe un mensaje..." 
+                class="
+                border-2 rounded-md border-blue-500
+                focus:shadow-md
+                p-2
+                transform
+                transition duration-500 ease-in-out
+                ">
+                <button id="send" class="
+                border-2 rounded-md border-blue-500
+                px-3 py-2
+                text-gray-900
+                transition duration-500 ease-in-out
+                hover:bg-blue-500
+                hover:text-gray-200
+                hover:shadow-md
+                hover:-translate-y-0.5
+                transform
+                select-none
+                ">Enviar</button>
+                </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
