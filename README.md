@@ -12,9 +12,9 @@ yarn
 npm install
 ```
 3. Ejecuta el programa con el siguiente comando:
-4. ```sh
-5. node index.js
-6. ```
+```sh
+node index.js
+```
 
 Es un pequeño proyecto personal con algunos bugs pero funciona. Siéntete libre de usarlo ;D
 
