@@ -1,5 +1,5 @@
 # simple chat
-## 💬🍃 n chat simple creado con socket.io y tailwind css
+## 💬🍃 Un chat simple creado con socket.io y tailwind css
 
 ### Cómo hacer que funcione?
 1. Descarga el repositorio
