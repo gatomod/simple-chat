@@ -16,7 +16,7 @@ let actions = document.getElementById('actions');
     })
     message.value = '';
     })
-input.addEventListener("keyup", function(event) {
+message.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         socket.emit('client:message', {
             username: username.value,
