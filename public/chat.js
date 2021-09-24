@@ -13,9 +13,20 @@ let actions = document.getElementById('actions');
         socket.emit('client:message', {
             username: username.value,
             message: message.value
-    })})
+    })
+    message.value = '';
+    })
+input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        socket.emit('client:message', {
+            username: username.value,
+            message: message.value
+    })  
+        message.value = '';
+    }
+});
 
-
+// Recibir mensaje
 socket.on('server:message', (data) => {
     let time = new Date();
     output.innerHTML += `
@@ -41,7 +52,7 @@ socket.on('server:message', (data) => {
     actions.innerHTML = ''
     // Esto es para hacer scroll
     scroll(0, 999999999999999);
-    message.value = '';
+    
 });
 
 
