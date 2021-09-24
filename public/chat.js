@@ -41,6 +41,7 @@ socket.on('server:message', (data) => {
     actions.innerHTML = ''
     // Esto es para hacer scroll
     scroll(0, 999999999999999);
+    message.value = '';
 });
 
 
