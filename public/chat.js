@@ -8,7 +8,7 @@ let send = document.getElementById('send');
 let output = document.getElementById('output');
 let actions = document.getElementById('actions');
 
-if(message.value !== '' && username.value !== '') {
+if(message.value !== undefined && username.value !== undefined) {
     // emitir mensaje
     send.addEventListener('click', () => {
         socket.emit('client:message', {
