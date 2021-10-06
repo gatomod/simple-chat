@@ -8,26 +8,30 @@ let send = document.getElementById('send');
 let output = document.getElementById('output');
 let actions = document.getElementById('actions');
 
-if(message.value !== undefined && username.value !== undefined) {
-    // emitir mensaje
-    send.addEventListener('click', () => {
+
+// emitir mensaje
+send.addEventListener('click', () => {
+    if (message.value !== '' && username.value !== '') {
         socket.emit('client:message', {
             username: username.value,
             message: message.value
-    })
-    message.value = '';
-    })
-    message.addEventListener("keyup", function(event) {
+        })
+        message.value = '';
+    }
+})
+message.addEventListener("keyup", function (event) {
+    if (message.value !== '' && username.value !== '') {
         if (event.keyCode === 13) {
             socket.emit('client:message', {
                 username: username.value,
                 message: message.value
-        })  
+            })
             message.value = '';
         }
-    });
+    }
 
-}
+});
+
 // Recibir mensaje
 socket.on('server:message', (data) => {
     let time = new Date();
@@ -54,12 +58,14 @@ socket.on('server:message', (data) => {
     actions.innerHTML = ''
     // Esto es para hacer scroll
     scroll(0, 999999999999999);
-    
+
 });
 
 
 // Emitir typing
-message.addEventListener('keypress', () => { socket.emit('client:typing', username.value) })
+message.addEventListener('keypress', () => {
+    socket.emit('client:typing', username.value)
+})
 
 socket.on('server:typing', (data) => {
     actions.innerHTML = `
@@ -67,4 +73,3 @@ socket.on('server:typing', (data) => {
 })
 
 // Otros trastes
-
