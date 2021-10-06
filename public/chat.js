@@ -8,7 +8,8 @@ let send = document.getElementById('send');
 let output = document.getElementById('output');
 let actions = document.getElementById('actions');
 
-// emitir mensaje
+if(message.value !== '' && username.value !== '') {
+    // emitir mensaje
     send.addEventListener('click', () => {
         socket.emit('client:message', {
             username: username.value,
@@ -16,16 +17,17 @@ let actions = document.getElementById('actions');
     })
     message.value = '';
     })
-message.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        socket.emit('client:message', {
-            username: username.value,
-            message: message.value
-    })  
-        message.value = '';
-    }
-});
+    message.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            socket.emit('client:message', {
+                username: username.value,
+                message: message.value
+        })  
+            message.value = '';
+        }
+    });
 
+}
 // Recibir mensaje
 socket.on('server:message', (data) => {
     let time = new Date();
