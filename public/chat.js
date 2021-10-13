@@ -11,7 +11,7 @@ let actions = document.getElementById('actions');
 
 // emitir mensaje
 send.addEventListener('click', () => {
-    if (message.value !== '' && username.value !== '') {
+    if (message.value.trim() !== '' && username.value.trim() !== '') {
         socket.emit('client:message', {
             username: username.value,
             message: message.value
@@ -20,7 +20,7 @@ send.addEventListener('click', () => {
     }
 })
 message.addEventListener("keyup", function (event) {
-    if (message.value !== '' && username.value !== '') {
+    if (message.value.trim() !== '' && username.value.trim() !== '') {
         if (event.keyCode === 13) {
             socket.emit('client:message', {
                 username: username.value,
