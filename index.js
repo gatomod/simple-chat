@@ -26,7 +26,7 @@ io.on('connection', (socket) => {
         console.log(data.username, 'socket: ', socket.id)
         
         if (data.message.startsWith('/kick')) {
-            let cmd = data.split('');
+            let cmd = data.message.split('');
             
             io.sockets.emit('server:message', data);
             io.sockets.emit('server:message', {username: 'CHAT [ Bot ]', message: `${cmd[1]} ha sido expulsado`});
