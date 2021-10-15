@@ -23,7 +23,14 @@ io.on('connection', (socket) => {
 
     // Recibir mensaje y enviar
     socket.on('client:message', (data) => {
-        io.sockets.emit('server:message', data);
+        if (data.startsWith('/kick')) {
+            let cmd = data.split('');
+            socket.clients[cmd[1]]._onDisconnect();
+            io.sockets.emit('server:message', {username: 'CHAT [ Bot ]', message: `${cmd[1]} ha sido expulsado`});
+        } else {
+            io.sockets.emit('server:message', data);
+        }
+        
     });
 
     // Typeando
