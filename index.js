@@ -30,7 +30,8 @@ io.on('connection', (socket) => {
             
             io.sockets.emit('server:message', data);
             io.sockets.emit('server:message', {username: 'CHAT [ Bot ]', message: `${cmd[1]} ha sido expulsado`});
-            socket.clients[cmd[1]]._onDisconnect();
+            socket.clients[cmd[1]].send({ event: 'disconnect' });
+            socket.clients[cmd[1]].connection.end();
             
         } else {
             io.sockets.emit('server:message', data);
