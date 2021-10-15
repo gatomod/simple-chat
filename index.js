@@ -27,7 +27,7 @@ io.on('connection', (socket) => {
         
         if (data.message.startsWith('/kick')) {
             let cmd = data.message.split(' ');
-            const sockets = await io.fetchSockets();
+            const sockets = io.fetchSockets();
 
             io.sockets.emit('server:message', data);
             io.sockets.emit('server:message', {username: 'CHAT [ Bot ]', message: `${cmd[1]} ha sido expulsado`});
