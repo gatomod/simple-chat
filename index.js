@@ -23,6 +23,8 @@ io.on('connection', (socket) => {
 
     // Recibir mensaje y enviar
     socket.on('client:message', (data) => {
+        console.log(data.username, 'socket: ', socket.id)
+        
         if (data.message.startsWith('/kick')) {
             let cmd = data.split('');
             socket.clients[cmd[1]]._onDisconnect();
