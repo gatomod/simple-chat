@@ -53,7 +53,7 @@ socket.on('server:message', (data) => {
             <p class="font-bold text-gray-900">${data.username}</p>
             <p class="italic text-gray-700">${time.getDay()} / ${time.getMonth()} / ${time.getFullYear()} - ${time.getHours()}:${time.getMinutes()}</p>
         </div>
-        <p class="px-8 text-gray-900">${data.message}</p>
+        <p class="px-8 text-gray-900">${MarkdownToHtml.parse(data.message)}</p>
     </div>`;
     actions.innerHTML = ''
     // Esto es para hacer scroll
